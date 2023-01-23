@@ -21,17 +21,15 @@ BATCH_FILES = {}
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        buttons = [
-            [
-                InlineKeyboardButton('⚡ UᎮDΛTΞS ⚡', url='https://t.me/sources_cods')
-            ],
-            [
-                InlineKeyboardButton('⚡ SUBSCᏒIBΞ ⚡', url=f"https://youtube.com/channel/UCqts9WhhlioK3RB9XQQzoAg"),
-            ],
-            [
-                InlineKeyboardButton(text=DOWNLOAD_TEXT_NAME,url=DOWNLOAD_TEXT_URL)
-            ]
-            ]
+        buttons = [[
+            InlineKeyboardButton('🔱 ᗩᗪᗪ ᗰᗴ TO YOᑌᖇ ᘜᖇOᑌᑭ 🔱', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ], [
+            InlineKeyboardButton('🎬 𝐌𝐎𝐕𝐈𝐄 𝐆𝐑𝐎𝐔𝐏 🍿', url='https://t.me/+7j7EXi8FELQ2MjU9'),
+            InlineKeyboardButton('⍟ 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 ⍟', url='https://t.me/MOVIESNSERIESSNS')
+        ], [
+            InlineKeyboardButton('🔰 𝐇𝐄𝐋𝐏 🔰', callback_data='help'),
+            InlineKeyboardButton('💠 𝐀𝐁𝐎𝐔𝐓 💠', callback_data='about')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
@@ -45,13 +43,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('⚡ SUBSCᏒIBΞ ⚡', url='https://youtube.com/channel/UCqts9WhhlioK3RB9XQQzoAg'),
-            InlineKeyboardButton('🤖 UᎮDΛTΞS 🤖', url='https://t.me/sources_cods')
-            ],[
-            InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ ΛBOUT ♻️', callback_data='about')
+            InlineKeyboardButton('🔱 ᗩᗪᗪ ᗰᗴ TO YOᑌᖇ ᘜᖇOᑌᑭ 🔱', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ], [
+            InlineKeyboardButton('🎬 𝐌𝐎𝐕𝐈𝐄 𝐆𝐑𝐎𝐔𝐏 🍿', url='https://t.me/+7j7EXi8FELQ2MjU9'),
+            InlineKeyboardButton('⍟ 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 ⍟', url='https://t.me/MOVIESNSERIESSNS')
+        ], [
+            InlineKeyboardButton('🔰 𝐇𝐄𝐋𝐏 🔰', callback_data='help'),
+            InlineKeyboardButton('💠 𝐀𝐁𝐎𝐔𝐓 💠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -70,7 +68,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🔥 JOIИ UᎮDΛTΞS CHΛИИΞL 🔥", url=invite_link.invite_link
+                    "⚜ 𝐌𝐀𝐈𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ⚜", url=invite_link.invite_link
                 )
             ]
         ]
@@ -91,13 +89,13 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('⚡ SUBSCᏒIBΞ ⚡', url='https://youtube.com/channel/UCqts9WhhlioK3RB9XQQzoAg'),
-            InlineKeyboardButton('🤖 UᎮDΛTΞS 🤖', url='https://t.me/sources_cods')
-            ],[
-            InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ ΛBOUT ♻️', callback_data='about')
+            InlineKeyboardButton('🔱 ᗩᗪᗪ ᗰᗴ TO YOᑌᖇ ᘜᖇOᑌᑭ 🔱', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ], [
+            InlineKeyboardButton('🎬 𝐌𝐎𝐕𝐈𝐄 𝐆𝐑𝐎𝐔𝐏 🍿', url='https://t.me/+7j7EXi8FELQ2MjU9'),
+            InlineKeyboardButton('⍟ 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 ⍟', url='https://t.me/MOVIESNSERIESSNS')
+        ], [
+            InlineKeyboardButton('🔰 𝐇𝐄𝐋𝐏 🔰', callback_data='help'),
+            InlineKeyboardButton('💠 𝐀𝐁𝐎𝐔𝐓 💠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -247,7 +245,7 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('sᴜʙsᴄʀɪʙᴇ', url='https://youtube.com/channel/UCqts9WhhlioK3RB9XQQzoAg') ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚜ 𝐌𝐀𝐈𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ⚜', url='https://t.me/MOVIESNSERIESSNS') ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
                     
